@@ -8,11 +8,9 @@
     <link rel="stylesheet" href="hover.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="icon" href="icon.png" type="image/x-icon">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
@@ -43,7 +41,6 @@
                 alert("For better user experience rotate your device, switch to a bigger screen or resize your window")
             }
 
-            AOS.init();
             // this will disable dragging of all images
             $("img").mousedown(function(e){
                 e.preventDefault()
@@ -272,10 +269,79 @@
         </div>
 
         <div class="container5" id="contact">
-            <span>CONTACT ME</span>
-            <a href="mailto:topal.daniel@csfk.mta.hu" target="_blank">topal.daniel@csfk.mta.hu</a>
+            <div class="form-container">
+                <form action="https://formspree.io/f/xknknner" method="POST" id="form" class="form-group">
+                    <label>
+                    Your email:
+                    <input type="email" name="_replyto" class="form-control">
+                    </label>
+                    <label>
+                    Your message:
+                    <textarea name="message" class="form-control" style="max-height: 40vh;" cols="40"></textarea>
+                    </label>
+                    <button type="submit" class="btn btn-success">Send</button>
+                </form>
+                <div id="status"></div>
+            </div>
         </div>
+        </div>
+        <div class="footer">
+            <span style="text-align: right;">CONTACT ME: <a href="mailto:topal.daniel@csfk.mta.hu" target="_blank">topal.daniel@csfk.mta.hu</a></span>
+            <div class="vl"></div>
+            <span><p style="margin: 0;">INSTAGRAM: <a href="https://www.instagram.com/danitopalmusic/"><img src="instagram.png" alt="" style="width: 50px; height: auto;"></a></p></span>
         </div>
     </div>
 </body>
 </html>
+<script>
+// CODE INSERTED BY FORMSPREE
+
+document.addEventListener("DOMContentLoaded", function() {
+
+// get the form elements defined in your form HTML above
+
+var form = document.getElementById("form");
+//var button = document.getElementById("my-form-button");
+var status = document.getElementById("status");
+
+// Success and Error functions for after the form is submitted
+
+function success() {
+form.reset();
+status.classList.remove('error');
+status.classList.add('success');
+status.innerHTML = "Thanks for Your feedback!";
+}
+
+function error() {
+    status.classList.remove('success');
+    status.classList.add('error');
+    status.innerHTML = "Oops! There was a problem.";
+}
+
+// handle the form submission event
+
+form.addEventListener("submit", function(ev) {
+ev.preventDefault();
+var data = new FormData(form);
+ajax(form.method, form.action, data, success, error);
+});
+});
+
+// helper function for sending an AJAX request
+
+function ajax(method, url, data, success, error) {
+var xhr = new XMLHttpRequest();
+xhr.open(method, url);
+xhr.setRequestHeader("Accept", "application/json");
+xhr.onreadystatechange = function() {
+if (xhr.readyState !== XMLHttpRequest.DONE) return;
+if (xhr.status === 200) {
+    success(xhr.response, xhr.responseType);
+} else {
+    error(xhr.status, xhr.response, xhr.responseType);
+}
+};
+xhr.send(data);
+}
+</script>
