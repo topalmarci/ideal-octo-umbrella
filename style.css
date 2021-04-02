@@ -1,0 +1,433 @@
+
+@import url(https://fonts.googleapis.com/css2?family=Jura:wght@300&family=Montserrat:wght@400&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Cinzel&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poiret+One&display=swap);
+
+:root {
+    --white: #fffefe;
+    --gray: #d6d6d6;
+    --orange: #f1a94a;
+    --font: 'Montserrat';
+}
+
+html {
+    font-size: 1em;
+}
+body {
+    width: 100vw;
+    margin: 0 auto;
+}
+
+.title-container {
+    padding: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: url(bg-img.jpg);
+    background-size: 100vw;
+    background-repeat: no-repeat;
+    background-position: left -250px;
+    animation-name: bgAnim;
+    animation-duration: 60s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+}
+
+.header-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 3rem;
+    margin: 0 auto;
+    padding: 0;
+} .header-list > li > span {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+} .header-link {
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
+    border: none;
+    width: 100%;
+    height: 100%;
+} .header-link:focus {
+    border: none;
+    outline: none;
+} .header-link:hover {
+    color: black;
+}
+
+.container1 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 4rem 0;
+} .bio {
+    background-color: var(--white);
+    height: 60vh;
+    width: 25vw;
+    min-width: 450px;
+    min-height: 620px;
+    max-height: 680px;
+    padding: 4rem;
+    box-shadow: -25px 20px 15px rgba(0, 0, 0, 0.2);
+    transform: translateX(-15vw);
+    animation-name: loadBio;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+} .bio > p {
+    line-height: clamp(25px, 2.4vh, 30px);
+    font-size: .9rem;
+} .get-in-touch {
+    margin-top: 4rem;
+} .get-in-touch > a {
+    text-decoration: none;
+} .bio-img {
+    opacity: 0;
+    width: 25vw;
+    min-width: 450px;
+    height: 65vh;
+    min-height: 640px;
+    max-height: 720px;
+    object-fit: cover;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(15vw);
+    animation-name: loadImg;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+} .container1 > span {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@keyframes loadImg {
+    0% {
+        opacity: 0;
+        transform: translatex(15vw)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0vw)
+    }
+}
+@keyframes loadBio {
+    0% {
+        opacity: 0;
+        transform: translatex(-15vw)
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0vw)
+    }
+}
+@keyframes bgAnim {
+    0% {
+        background-position: left -250px;
+    } 50% {
+        background-position: left -400px;
+    } 100% {
+        background-position: left -250px;
+    }
+}
+@keyframes fadeIn {
+    from {
+        transform: translateX(-100px)
+    }
+    to {
+        transform: translateX(0px)
+    }
+}
+@keyframes addShadow {
+    from {
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+        transform: translate3d(0px, 0px, 0);
+    }
+    to {
+        box-shadow: -15px 20px 10px rgba(0, 0, 0, 0.3);
+        transform: translate3d(15px, -15px, 0);
+
+    }
+} @keyframes removeShadow {
+    from {
+        box-shadow: -15px 20px 10px rgba(0, 0, 0, 0.3);
+        transform: translate3d(15px, -15px, 0);
+    }
+    to {
+        box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.3);
+        transform: translate3d(0px, 0px, 0);
+    }
+}
+
+.researchImg {
+    width: 30vw;
+    object-fit: cover;
+    animation-name: loadImg;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+} #research {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    margin: 0 auto;
+} .content, .content2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.3);
+    margin: 2rem 0;
+    width: 60vw;
+    max-height: 55vh;
+} .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: .9cm;
+    font-size: .86rem;
+    width: 50%;
+} .text > h3 {
+    color: var(--orange);
+    font-size: 1.3rem;
+    width: 24vw;
+} .text > p {
+    width: 24vw;
+} .text2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: .9cm;
+    font-size: .86rem;
+    width: 50%;
+} .text2 > h3 {
+    color: var(--orange);
+    font-size: 1.3rem;
+    width: 26vw;
+} .text2 > p {
+    width: 26vw;
+} .text, .text2 {
+    animation-name: loadBio;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+}
+
+
+.container3 {
+    padding: 50px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} .container3 > img {
+    border-radius: 50%;
+    width: 200px;
+    object-fit: cover;
+} .container3 > h2 {
+    margin-bottom: 7rem;
+} .paper {
+    width: 60vw;
+    margin-bottom: 3rem;
+    box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.2);
+    padding: .6rem;
+} .paperAnim {
+    animation-name: fadeIn;
+    animation-duration: 600ms;
+    animation-fill-mode: forwards;
+} .papercont {
+    display: flex;
+} .papercont > a {
+    margin-right: 2rem;
+    color: black;
+} .papercont > a > h5 {
+    line-height: .8cm;
+    margin: 0;
+    min-width: 300px;
+    line-height: 30px;
+} .papercont > p {
+    font-size: .9rem;
+    line-height: .8cm;
+    margin: 0;
+    max-height: 22vh;
+}
+
+.container4 {
+    background-color: var(--white);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+} .container4 > .music-text > p {
+    margin: 0;
+} .container4 > img {
+    width: 30vw;
+    min-width: 500px;
+    max-width: 700px;
+    margin-top: 2rem;
+} .music-text > h1 > a {
+    text-decoration: none;
+    color: var(--orange);
+    font-family: 'Poiret One', cursive;
+    letter-spacing: 7px;
+} .spotify {
+    font-size: 3rem;
+    color: #1DB954;
+    font-family: 'Montserrat', sans-serif;
+} .spotify:hover {
+    color: var(--orange);
+} .musicHover {
+    animation-name: addShadow;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+} .musicHoverOver {
+    animation-name: removeShadow;
+    animation-duration: 400ms;
+    animation-fill-mode: forwards;
+} .music-text {
+    text-align: center;
+    height: 100%;
+}
+
+/*media querys*/
+@media screen and (min-width: 2000px) {
+    html {
+        font-size: 2rem;
+    }
+    .bio, .bio-img {
+        min-width: 900px;
+        min-height: 1000px;
+        max-height: 1400px;
+    }
+    .bio > p {
+        line-height: clamp(40px, 2.4vh, 50px);
+    }
+    .papercont > a > h3 {
+        line-height: 50px;
+    }
+    .container4 > img {
+        max-width: 1400px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    html {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .title-container {
+        background: url("bg-img.jpg");
+        background-size: 100%;
+        background-position: left -150px;
+        background-origin: border-box;
+        background-size: fit-content;
+        animation: none;
+    }
+    .container1 {
+        all: unset;
+        width: 100vw;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } .bio {
+        width: 100vw;
+        height: 100%;
+        padding: 2rem;
+        min-width: unset;
+        max-width: unset;
+        min-height: unset;
+        max-height: unset;
+        box-shadow: unset;
+        transform: translateX(0);
+        animation: none;
+    } .bio-img, #bioImg {
+        all: unset;
+        box-shadow: none;
+        animation: none;
+        opacity: 1;
+        width: 65vw;
+        height: 50vh;
+        object-fit: cover;
+        min-width: unset;
+        max-width: unset;
+        min-height: unset;
+        max-height: unset;
+    }
+
+    #research {
+        width: 100vw;
+    } .content, .content2 {
+        flex-direction: column;
+        padding: .5rem;
+        max-height: unset;
+    } .text, .text2, .text > h3, .text2 > h3, .text > p, .text2 > p {
+        width: 100%;
+    } .researchImg {
+        all: unset;
+        object-fit: cover;
+        height: 50vh;
+    } .content2 {
+        flex-direction: column-reverse;
+    }
+    
+    .container3 {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } .paper {
+        all: unset;
+        width: 80vw;
+        margin-bottom: 2rem;
+    } .papercont {
+        flex-direction: column;
+    } .papercont > a {
+        all: unset;
+    } .papercont > p {
+        all: unset;
+        margin-bottom: 1rem;
+    }
+
+    .container4 {
+        all: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } #musicImg {
+        all: unset;
+        width: 60vw;
+    } .music-text {
+        width: 80vw;
+        margin-bottom: 2rem;
+    } .container4 > .music-text > p {
+        margin-top: 1rem;
+        line-height: 30px;
+    } .container4 > .music-text > p > a {
+        font-size: 2rem;
+    }
+}
