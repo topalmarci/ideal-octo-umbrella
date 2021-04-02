@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="icon" href="icon.png" type="image/x-icon">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
     <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -79,7 +81,7 @@
             font-size: 1em;
         }
         body {
-            width: 70vw;
+            width: 100vw;
             margin: 0 auto;
         }
 
@@ -90,9 +92,9 @@
             justify-content: center;
             align-items: center;
             background: url(bg-img.jpg);
-            background-size: 70vw;
+            background-size: 100vw;
             background-repeat: no-repeat;
-            background-position: left -160px;
+            background-position: left -250px;
             animation-name: bgAnim;
             animation-duration: 60s;
             animation-timing-function: linear;
@@ -197,11 +199,11 @@
         }
         @keyframes bgAnim {
             0% {
-                background-position: left -160px;
+                background-position: left -250px;
             } 50% {
-                background-position: left -200px;
+                background-position: left -400px;
             } 100% {
-                background-position: left -160px;
+                background-position: left -250px;
             }
         }
         @keyframes fadeIn {
@@ -241,14 +243,19 @@
             animation-duration: 600ms;
             animation-fill-mode: forwards;
         } #research {
-            display: grid;
-            grid-template-columns: 70vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 70vw;
+            margin: 0 auto;
         } .content, .content2 {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             box-shadow: -15px 15px 15px rgba(0, 0, 0, 0.3);
-            margin: 2rem;
+            margin: 2rem 0;
+            width: 60vw;
         } .text {
             display: flex;
             flex-direction: column;
@@ -296,7 +303,7 @@
             border-radius: 50%;
             width: 200px;
             object-fit: cover;
-        } .container3 > h1 {
+        } .container3 > h2 {
             margin-bottom: 7rem;
         } .paper {
             width: 60vw;
@@ -312,7 +319,7 @@
         } .papercont > a {
             margin-right: 2rem;
             color: black;
-        } .papercont > a > h3 {
+        } .papercont > a > h5 {
             line-height: .8cm;
             margin: 0;
             min-width: 300px;
@@ -326,28 +333,29 @@
         
         .container4 {
             background-color: var(--white);
-            padding: 100px;
+            padding: 2rem;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         } .container4 > .music-text > p {
             margin: 0;
-            margin-top: 50px;
         } .container4 > img {
             width: 30vw;
             min-width: 500px;
             max-width: 700px;
-            margin-right: 50px;
+            margin-top: 2rem;
         } .music-text > h1 > a {
             text-decoration: none;
             color: var(--orange);
             font-family: 'Poiret One', cursive;
             letter-spacing: 7px;
         } .spotify {
-            font-size: 1.2em;
+            font-size: 3rem;
             color: #1DB954;
+            font-family: 'Montserrat', sans-serif;
         } .spotify:hover {
-            color: var(--orange)
+            color: var(--orange);
         } .musicHover {
             animation-name: addShadow;
             animation-duration: 400ms;
@@ -356,6 +364,9 @@
             animation-name: removeShadow;
             animation-duration: 400ms;
             animation-fill-mode: forwards;
+        } .music-text {
+            text-align: center;
+            height: 100%;
         }
 
         /*media querys*/
@@ -473,9 +484,12 @@
                 width: 80vw;
             } .music-text {
                 width: 80vw;
+                margin-bottom: 2rem;
             } .container4 > .music-text > p {
                 margin-top: 1rem;
                 line-height: 30px;
+            } .container4 > .music-text > p > a {
+                font-size: 2rem;
             }
         }
     </style>
@@ -571,13 +585,13 @@
         <div class="container3" id="publications">
             <img src="IMG_2920.JPG" alt="">
 
-            <h1>RESEARCH PAPERS</h1>
+            <h2>RESEARCH PAPERS</h2>
 
             <div class="paper">
                 <div class="papercont">
-                <a href="https://link.springer.com/article/10.1007/s00704-020-03361-7" target="_blank"><h3>REFINING PROJECTED MULTIDECADAL 
+                <a href="https://link.springer.com/article/10.1007/s00704-020-03361-7" target="_blank"><h4>REFINING PROJECTED MULTIDECADAL 
                     HYDROCLIMATE UNCERTAINTY IN EAST-CENTRAL EUROPE USING CMIP5 AND SINGLE-MODEL LARGE 
-                    ENSEMBLE SIMULATIONS</h3></a>
+                    ENSEMBLE SIMULATIONS</h4></a>
                 <p>
                     Future hydroclimate projections of global climate models for East-Central 
                     Europe diverge to a great extent, thus, constrain adaptation strategies. 
@@ -598,8 +612,8 @@
             <div class="paper">
                 <div class="papercont">
                 <a href="https://journals.ametsoc.org/view/journals/clim/33/17/jcliD190803.xml?tab_body=fulltext-display" target="_blank">
-                    <h3>AN INTERNAL ATMOSPHERIC PROCESS DETERMINING SUMMERTIME ARCTIC SEA ICE MELTING IN THE NEXT THREE DECADES: 
-                    LESSONS LEARNED FROM FIVE LARGE ENSEMBLES AND MULTIPLE CMIP5 CLIMATE SIMULATIONS</h3></a>
+                    <h4>AN INTERNAL ATMOSPHERIC PROCESS DETERMINING SUMMERTIME ARCTIC SEA ICE MELTING IN THE NEXT THREE DECADES: 
+                    LESSONS LEARNED FROM FIVE LARGE ENSEMBLES AND MULTIPLE CMIP5 CLIMATE SIMULATIONS</h4></a>
                 <p>
                     We show that all existing climate models exhibit limitations in replicating the magnitude of 
                     the observed local Arctic atmosphere-sea ice coupling and its sensitivity to remote tropical SST 
@@ -609,17 +623,17 @@
                 </p>
                 </div>
                 
-                <h5>Topal et al.<br>June 25, 2020, Journal of Climate</h5>
+                <h5>Topal et al.<br></br>June 25, 2020, Journal of Climate</h5>
                 
             </div>
 
             <div class="paper">
                 <div class="papercont">
                 <a href="https://www.researchgate.net/publication/344202531_Detecting_forced_changes_in_internal_variability_using_Large_Ensembles_On_the_use_of_methods_based_on_the_snapshot_view" target="_blank">
-                    <h3>DETECTING FORCED CHANGES IN INTERNAL VARIABILITY USING LARGE ENSEMBLES: ON THE USE OF METHODS BASED ON THE “SNAPSHOT VIEW”</h3></a>
+                    <h4>DETECTING FORCED CHANGES IN INTERNAL VARIABILITY USING LARGE ENSEMBLES: ON THE USE OF METHODS BASED ON THE “SNAPSHOT VIEW”</h4></a>
                 </div>
                 
-                <h5>Haszpra et al.<br>September 1, 2020, Variations</h5>
+                <h5>Haszpra et al.<br></br>September 1, 2020, Variations</h5>
                 
             </div>
 
@@ -627,7 +641,7 @@
             <div class="paper">
                 <div class="papercont">
                 <a href="https://journals.ametsoc.org/view/journals/clim/33/8/jcli-d-19-0004.1.xml?tab_body=fulltext-display" target="_blank">
-                    <h3>ON THE TIME EVOLUTION OF THE ARCTIC OSCILLATION AND RELATED WINTERTIME PHENOMENA UNDER DIFFERENT FORCING SCENARIOS IN AN ENSEMBLE APPROACH</h3></a>
+                    <h4>ON THE TIME EVOLUTION OF THE ARCTIC OSCILLATION AND RELATED WINTERTIME PHENOMENA UNDER DIFFERENT FORCING SCENARIOS IN AN ENSEMBLE APPROACH</h4></a>
                 <p>
                     The Arctic Oscillation and its related wintertime phenomena are investigated under climate 
                     change by 2099 in an ensemble approach using the CESM1 Large Ensemble and the MPI-ESM Grand 
@@ -636,14 +650,14 @@
                 </p>
                 </div>
                 
-                <h5>Haszpra et al.<br>April 15, 2020, Journal of Climate</h5>
+                <h5>Haszpra et al.<br></br>April 15, 2020, Journal of Climate</h5>
                 
             </div>
 
             <div class="paper">
                 <div class="papercont">
                 <a href="https://journals.ametsoc.org/view/journals/clim/32/24/jcli-d-18-0783.1.xml?tab_body=fulltext-display" target="_blank">
-                    <h3>HOW TROPICAL PACIFIC SURFACE COOLING CONTRIBUTED TO ACCELERATED SEA ICE MELT FROM 2007 TO 2012 AS ICE IS THINNED BY ANTHROPOGENIC FORCING</h3></a>
+                    <h4>HOW TROPICAL PACIFIC SURFACE COOLING CONTRIBUTED TO ACCELERATED SEA ICE MELT FROM 2007 TO 2012 AS ICE IS THINNED BY ANTHROPOGENIC FORCING</h4></a>
                 <p>
                     Observational and model evidence shows that the changes in summer sea ice since the 2000s reflect a 
                     continuous anthropogenically forced melting masked by interdecadal variability of Arctic atmospheric 
@@ -653,7 +667,7 @@
                 </p>
                 </div>
                 
-                <h5>Baxter et al.<br>November 20, 2019, Journal of Climate</h5>
+                <h5>Baxter et al.<br></br>November 20, 2019, Journal of Climate</h5>
                 
             </div>
 
@@ -661,7 +675,7 @@
             <div class="paper">
                 <div class="papercont">
                 <a href="https://www.degruyter.com/view/journals/geo/8/1/article-p78.xml" target="_blank">
-                    <h3>DETECTING BREAKPOINTS IN ARTIFICIALLY MODIFIED-AND REAL-LIFE TIME SERIES USING THREE STATE-OF-THE-ART METHODS</h3></a>
+                    <h4>DETECTING BREAKPOINTS IN ARTIFICIALLY MODIFIED-AND REAL-LIFE TIME SERIES USING THREE STATE-OF-THE-ART METHODS</h4></a>
                 <p>
                     In the present study, artificially generated time series with white and red noise structures 
                     are analyzed using three recently developed breakpoint detection methods.  Utilizing this experience 
@@ -670,19 +684,17 @@
                 </p>
                 </div>
                 
-                <h5>Topal et al.<br>February 15, 2016, Open Geosciences</h5>
+                <h5>Topal et al.<br></br>February 15, 2016, Open Geosciences</h5>
                 
             </div>
         </div>
 
 
         <div class="container4" id="music">
-            <img src="Képernyőkép 2020-12-26 172023.jpg" alt="" id="musicImg">
             <div class="music-text">
-                <h1><a href="https://open.spotify.com/artist/4h2pSSzlmotTd9Y8mi0XQJ?si=gXHgtZmyRQWsnoFFodW4VQ" target="_blank" id="musicLink">MUSIC</a></h1>
-                <p>Combining science and music</p>
-                <p>Check out some of our band's songs on <a class="spotify" href="https://open.spotify.com/artist/4h2pSSzlmotTd9Y8mi0XQJ?si=gXHgtZmyRQWsnoFFodW4VQ" target="_blank">Spotify</a>.</p>
+                <p><a class="spotify" href="https://open.spotify.com/artist/4h2pSSzlmotTd9Y8mi0XQJ?si=gXHgtZmyRQWsnoFFodW4VQ" target="_blank" id="musicLink">Spotify</a></p>
             </div>
+            <img src="Képernyőkép 2020-12-26 172023.jpg" alt="" id="musicImg">
         </div>
 
         <div class="container5" id="contact">
